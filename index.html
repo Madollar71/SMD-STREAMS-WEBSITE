@@ -3,74 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMD STREAMS</title>
-<link rel="stylesheet" href="style.css">
+  <meta name="description" content="SMD STREAMS - Gaming livestreams, eFootball and gaming content.">
+  <meta name="theme-color" content="#080808">
+  <title>SMD STREAMS | Gaming & Live Streams</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>SMD STREAMS</h1>
-    <p>YOUR GAMING. YOUR STREAM. YOUR COMMUNITY.</p>
+  <header class="site-header">
+    <div class="brand">
+      <h1>SMD STREAMS</h1>
+      <p>YOUR GAMING. YOUR STREAM. YOUR COMMUNITY.</p>
+    </div>
+
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#live">LIVE</a>
+      <a href="#gaming">GAMING</a>
+      <a href="#socials">SOCIALS</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>WELCOME TO SMD STREAMS</h2>
-      <p>Watch gaming streams, follow the action and join the community.</p>
-<a href="https://www.twitch.tv/still_madollare" target="_blank" rel="noopener">
-  <button>🔴 WATCH LIVE</button>
-</a>
-    </section>
 
-    <section class="live">
-      <h2>🎮 LIVE STREAM</h2>
-<div class="stream-box twitch-player">
-  <iframe
-src="https://player.twitch.tv/?channel=still_madollare&parent=madollar71.github.io"
-    height="400"
-    width="100%"
-    allowfullscreen>
-  </iframe>
-</div>    </section>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="live-badge">
+          <span></span> LIVE GAMING
+        </div>
 
-    <section class="games">
-      <h2>🔥 GAMING</h2>
-      <div class="card">
-        <h3>⚽ eFootball</h3>
-        <p>Watch competitive eFootball gameplay and live matches.</p>
+        <h2>WELCOME TO<br><strong>SMD STREAMS</strong></h2>
+
+        <p>
+          Watch gaming streams, follow the action,
+          and join the SMD STREAMS community.
+        </p>
+
+        <a
+          class="main-button"
+          href="https://www.twitch.tv/still_madollare"
+          target="_blank"
+          rel="noopener">
+          🔴 WATCH LIVE
+        </a>
       </div>
     </section>
-<section class="social">
-  <h2>FOLLOW SMD STREAMS</h2>
 
-  <a href="https://www.twitch.tv/still_madollare" target="_blank">
-    <button>🎮 Twitch</button>
-  </a>
+    <!-- LIVE STREAM -->
+    <section class="live-section" id="live">
+      <div class="section-title">
+        <span>STREAM</span>
+        <h2>🎮 LIVE STREAM</h2>
+      </div>
 
-  <a href="https://www.youtube.com/@streamermadollar" target="_blank">
-    <button>▶️ YouTube</button>
-  </a>
+      <div class="stream-box twitch-player">
+        <iframe
+          src="https://player.twitch.tv/?channel=still_madollare&parent=madollar71.github.io"
+          height="400"
+          width="100%"
+          allowfullscreen
+          scrolling="no">
+        </iframe>
+      </div>
 
-  <a href="https://www.instagram.com/_still_madollare_/" target="_blank">
-    <button>📸 Instagram</button>
-  </a>
+      <a
+        class="twitch-link"
+        href="https://www.twitch.tv/still_madollare"
+        target="_blank"
+        rel="noopener">
+        🎮 Visit my Twitch channel
+      </a>
+    </section>
 
-  <a href="https://www.facebook.com/NiInfluencer254" target="_blank">
-    <button>📘 Facebook</button>
-  </a>
+    <!-- GAMING -->
+    <section class="gaming-section" id="gaming">
+      <div class="section-title">
+        <span>PLAY</span>
+        <h2>🔥 GAMING</h2>
+      </div>
 
-  <a href="https://vm.tiktok.com/ZS9BnHdNggMyC-gMhiX/" target="_blank">
-    <button>🎵 TikTok</button>
-  </a>
-</section>    
-    
+      <div class="game-card">
+        <div class="game-icon">⚽</div>
+
+        <div>
+          <h3>eFootball</h3>
+          <p>
+            Competitive gameplay, live matches and
+            exciting football gaming content.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIALS -->
+    <section class="social-section" id="socials">
+      <div class="section-title">
+        <span>CONNECT</span>
+        <h2>📱 FOLLOW SMD STREAMS</h2>
+      </div>
+
+      <div class="social-grid">
+
+        <a
+          class="social-card twitch"
+          href="https://www.twitch.tv/still_madollare"
+          target="_blank"
+          rel="noopener">
+          <span>🎮</span>
+          <strong>Twitch</strong>
+          <small>still_madollare</small>
+        </a>
+
+        <a
+          class="social-card youtube"
+          href="https://www.youtube.com/@streamermadollar"
+          target="_blank"
+          rel="noopener">
+          <span>▶️</span>
+          <strong>YouTube</strong>
+          <small>SMD STREAMS</small>
+        </a>
+
+        <a
+          class="social-card instagram"
+          href="https://www.instagram.com/_still_madollare_/"
+          target="_blank"
+          rel="noopener">
+          <span>📸</span>
+          <strong>Instagram</strong>
+          <small>_still_madollare_</small>
+        </a>
+
+        <a
+          class="social-card facebook"
+          href="https://www.facebook.com/NiInfluencer254"
+          target="_blank"
+          rel="noopener">
+          <span>📘</span>
+          <strong>Facebook</strong>
+          <small>Socialite Madollare</small>
+        </a>
+
+        <a
+          class="social-card tiktok"
+          href="https://vm.tiktok.com/ZS9BnHdNggMyC-gMhiX/"
+          target="_blank"
+          rel="noopener">
+          <span>🎵</span>
+          <strong>TikTok</strong>
+          <small>SMD STREAMS</small>
+        </a>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <p>© 2026 SMD STREAMS. All rights reserved.</p>
+    <h3>SMD STREAMS</h3>
+    <p>Gaming • Streaming • Community</p>
+    <p class="copyright">© 2026 SMD STREAMS. All rights reserved.</p>
   </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
