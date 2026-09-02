@@ -137,13 +137,17 @@
     </div>
 
 
-    <div class="stream-status">
+    <!-- AUTOMATIC TWITCH STATUS -->
 
-      <div class="status-light"></div>
+    <div class="stream-status" id="stream-status">
+
+      <div class="status-light" id="status-light"></div>
 
       <div>
-        <strong>STREAM STATUS</strong>
-        <span>Check me live on Twitch</span>
+        <strong id="status-title">CHECKING STATUS...</strong>
+        <span id="status-text">
+          Connecting to Twitch
+        </span>
       </div>
 
       <div class="twitch-symbol">TW</div>
@@ -206,8 +210,8 @@
     </div>
 
     <div class="status-badge">
-      <span></span>
-      TWITCH
+      <span id="mini-status-light"></span>
+      <span id="mini-status">TWITCH</span>
     </div>
 
   </div>
@@ -215,12 +219,7 @@
 
   <div class="stream-box">
 
-    <iframe
-      src="https://player.twitch.tv/?channel=still_madollare&parent=madollar71.github.io"
-      allowfullscreen
-      scrolling="no"
-      title="SMD STREAMS Twitch Live Stream">
-    </iframe>
+    <div id="twitch-player"></div>
 
   </div>
 
@@ -332,8 +331,7 @@
 
   <div class="social-grid">
 
-    <a
-      class="social-card"
+    <a class="social-card"
       href="https://www.twitch.tv/still_madollare"
       target="_blank"
       rel="noopener">
@@ -350,8 +348,7 @@
     </a>
 
 
-    <a
-      class="social-card"
+    <a class="social-card"
       href="https://www.youtube.com/@streamermadollar"
       target="_blank"
       rel="noopener">
@@ -368,8 +365,7 @@
     </a>
 
 
-    <a
-      class="social-card"
+    <a class="social-card"
       href="https://www.instagram.com/_still_madollare_/"
       target="_blank"
       rel="noopener">
@@ -386,8 +382,7 @@
     </a>
 
 
-    <a
-      class="social-card"
+    <a class="social-card"
       href="https://www.facebook.com/NiInfluencer254"
       target="_blank"
       rel="noopener">
@@ -404,8 +399,7 @@
     </a>
 
 
-    <a
-      class="social-card"
+    <a class="social-card"
       href="https://vm.tiktok.com/ZS9BnHdNggMyC-gMhiX/"
       target="_blank"
       rel="noopener">
@@ -444,6 +438,9 @@
 
 </footer>
 
+
+<!-- TWITCH EMBED API -->
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
 
 <script src="script.js"></script>
 
