@@ -3,19 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SMD STREAMS - Gaming livestreams, eFootball and gaming content.">
-  <meta name="theme-color" content="#080808">
-  <title>SMD STREAMS | Gaming & Live Streams</title>
+
+  <meta
+    name="description"
+    content="SMD STREAMS - Gaming livestreams, eFootball, competitive gameplay and gaming entertainment."
+  >
+
+  <meta name="theme-color" content="#070707">
+
+  <title>SMD STREAMS | Gaming & Live Streaming</title>
+
+  <!-- Professional gaming fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
+
     <div class="brand">
-      <h1>SMD STREAMS</h1>
-      <p>YOUR GAMING. YOUR STREAM. YOUR COMMUNITY.</p>
+
+      <div class="brand-top">
+        <span class="brand-line"></span>
+        <span class="brand-dot"></span>
+        <span class="brand-line"></span>
+      </div>
+
+      <h1>SMD <span>STREAMS</span></h1>
+
+      <p>
+        GAMING • LIVE STREAMING • ENTERTAINMENT
+      </p>
+
     </div>
 
     <nav>
@@ -24,86 +52,244 @@
       <a href="#gaming">GAMING</a>
       <a href="#socials">SOCIALS</a>
     </nav>
+
   </header>
+
 
   <main>
 
     <!-- HERO -->
     <section class="hero" id="home">
+
+      <div class="hero-background"></div>
+
       <div class="hero-content">
-        <div class="live-badge">
-          <span></span> LIVE GAMING
+
+        <div class="hero-tag">
+          <span class="pulse"></span>
+          WELCOME TO THE STREAM
         </div>
 
-        <h2>WELCOME TO<br><strong>SMD STREAMS</strong></h2>
+        <h2>
+          LEVEL UP<br>
+          <span>YOUR GAME.</span>
+        </h2>
 
-        <p>
-          Watch gaming streams, follow the action,
-          and join the SMD STREAMS community.
+        <p class="hero-description">
+          Welcome to <strong>SMD STREAMS</strong> — your destination
+          for gaming, live matches, competitive action and
+          unforgettable moments.
         </p>
 
+        <div class="hero-buttons">
+
+          <a
+            class="main-button"
+            href="https://www.twitch.tv/still_madollare"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="button-icon">▶</span>
+            WATCH LIVE
+          </a>
+
+          <a class="secondary-button" href="#live">
+            EXPLORE STREAM
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-glow"></div>
+
+    </section>
+
+
+    <!-- STREAMER PROFILE -->
+    <section class="profile-section">
+
+      <div class="profile-card">
+
+        <div class="profile-avatar">
+          SMD
+        </div>
+
+        <div class="profile-info">
+
+          <div class="verified-name">
+            <h2>SMD STREAMS</h2>
+            <span>✓</span>
+          </div>
+
+          <p class="creator-title">
+            GAMING CREATOR • STREAMER
+          </p>
+
+          <p class="creator-description">
+            Gaming, competition and pure entertainment.
+            Follow the journey and join the community.
+          </p>
+
+        </div>
+
         <a
-          class="main-button"
+          class="profile-button"
           href="https://www.twitch.tv/still_madollare"
           target="_blank"
-          rel="noopener">
-          🔴 WATCH LIVE
+          rel="noopener"
+        >
+          FOLLOW
         </a>
+
       </div>
+
     </section>
+
 
     <!-- LIVE STREAM -->
     <section class="live-section" id="live">
-      <div class="section-title">
-        <span>STREAM</span>
-        <h2>🎮 LIVE STREAM</h2>
+
+      <div class="section-heading">
+
+        <div>
+          <span class="small-heading">WATCH NOW</span>
+          <h2>LIVE <span>STREAM</span></h2>
+        </div>
+
+        <div class="status-badge">
+          <span></span>
+          TWITCH
+        </div>
+
       </div>
 
-      <div class="stream-box twitch-player">
+      <div class="stream-box">
+
         <iframe
           src="https://player.twitch.tv/?channel=still_madollare&parent=madollar71.github.io"
-          height="400"
-          width="100%"
           allowfullscreen
-          scrolling="no">
+          scrolling="no"
+          title="SMD STREAMS Twitch Live Stream">
         </iframe>
+
       </div>
 
-      <a
-        class="twitch-link"
-        href="https://www.twitch.tv/still_madollare"
-        target="_blank"
-        rel="noopener">
-        🎮 Visit my Twitch channel
-      </a>
+      <div class="stream-bottom">
+
+        <p>
+          🎮 Watch SMD STREAMS live on Twitch
+        </p>
+
+        <a
+          href="https://www.twitch.tv/still_madollare"
+          target="_blank"
+          rel="noopener"
+        >
+          OPEN TWITCH →
+        </a>
+
+      </div>
+
     </section>
+
 
     <!-- GAMING -->
     <section class="gaming-section" id="gaming">
-      <div class="section-title">
-        <span>PLAY</span>
-        <h2>🔥 GAMING</h2>
-      </div>
 
-      <div class="game-card">
-        <div class="game-icon">⚽</div>
+      <div class="section-heading">
 
         <div>
-          <h3>eFootball</h3>
-          <p>
-            Competitive gameplay, live matches and
-            exciting football gaming content.
-          </p>
+          <span class="small-heading">THE ACTION</span>
+          <h2>FEATURED <span>GAMING</span></h2>
         </div>
+
       </div>
+
+
+      <div class="game-grid">
+
+        <div class="game-card featured-game">
+
+          <div class="game-number">01</div>
+
+          <div class="game-icon">
+            ⚽
+          </div>
+
+          <div class="game-content">
+
+            <span class="game-label">
+              FEATURED GAME
+            </span>
+
+            <h3>eFootball</h3>
+
+            <p>
+              Competitive football gameplay, intense matches,
+              skills, goals and live gaming action.
+            </p>
+
+          </div>
+
+          <div class="game-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="game-card">
+
+          <div class="game-number">02</div>
+
+          <div class="game-icon">
+            🎮
+          </div>
+
+          <div class="game-content">
+
+            <span class="game-label">
+              MORE COMING
+            </span>
+
+            <h3>Gaming</h3>
+
+            <p>
+              More games, challenges and exciting content
+              coming to SMD STREAMS.
+            </p>
+
+          </div>
+
+          <div class="game-arrow">
+            →
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- SOCIALS -->
+
+    <!-- SOCIAL MEDIA -->
     <section class="social-section" id="socials">
-      <div class="section-title">
-        <span>CONNECT</span>
-        <h2>📱 FOLLOW SMD STREAMS</h2>
+
+      <div class="section-heading">
+
+        <div>
+          <span class="small-heading">STAY CONNECTED</span>
+          <h2>FOLLOW <span>SMD</span></h2>
+        </div>
+
       </div>
+
+      <p class="social-intro">
+        Follow SMD STREAMS across social media and never
+        miss the next stream, clip or gaming moment.
+      </p>
+
 
       <div class="social-grid">
 
@@ -111,62 +297,102 @@
           class="social-card twitch"
           href="https://www.twitch.tv/still_madollare"
           target="_blank"
-          rel="noopener">
-          <span>🎮</span>
-          <strong>Twitch</strong>
-          <small>still_madollare</small>
+          rel="noopener"
+        >
+          <div class="social-icon">🎮</div>
+          <div>
+            <strong>Twitch</strong>
+            <small>still_madollare</small>
+          </div>
+          <b>→</b>
         </a>
+
 
         <a
           class="social-card youtube"
           href="https://www.youtube.com/@streamermadollar"
           target="_blank"
-          rel="noopener">
-          <span>▶️</span>
-          <strong>YouTube</strong>
-          <small>SMD STREAMS</small>
+          rel="noopener"
+        >
+          <div class="social-icon">▶</div>
+          <div>
+            <strong>YouTube</strong>
+            <small>SMD STREAMS</small>
+          </div>
+          <b>→</b>
         </a>
+
 
         <a
           class="social-card instagram"
           href="https://www.instagram.com/_still_madollare_/"
           target="_blank"
-          rel="noopener">
-          <span>📸</span>
-          <strong>Instagram</strong>
-          <small>_still_madollare_</small>
+          rel="noopener"
+        >
+          <div class="social-icon">◎</div>
+          <div>
+            <strong>Instagram</strong>
+            <small>_still_madollare_</small>
+          </div>
+          <b>→</b>
         </a>
+
 
         <a
           class="social-card facebook"
           href="https://www.facebook.com/NiInfluencer254"
           target="_blank"
-          rel="noopener">
-          <span>📘</span>
-          <strong>Facebook</strong>
-          <small>Socialite Madollare</small>
+          rel="noopener"
+        >
+          <div class="social-icon">f</div>
+          <div>
+            <strong>Facebook</strong>
+            <small>Socialite Madollare</small>
+          </div>
+          <b>→</b>
         </a>
+
 
         <a
           class="social-card tiktok"
           href="https://vm.tiktok.com/ZS9BnHdNggMyC-gMhiX/"
           target="_blank"
-          rel="noopener">
-          <span>🎵</span>
-          <strong>TikTok</strong>
-          <small>SMD STREAMS</small>
+          rel="noopener"
+        >
+          <div class="social-icon">♪</div>
+          <div>
+            <strong>TikTok</strong>
+            <small>SMD STREAMS</small>
+          </div>
+          <b>→</b>
         </a>
 
       </div>
+
     </section>
 
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <h3>SMD STREAMS</h3>
-    <p>Gaming • Streaming • Community</p>
-    <p class="copyright">© 2026 SMD STREAMS. All rights reserved.</p>
+
+    <div class="footer-logo">
+      SMD <span>STREAMS</span>
+    </div>
+
+    <p>
+      GAMING • STREAMING • COMMUNITY
+    </p>
+
+    <div class="footer-line"></div>
+
+    <p class="copyright">
+      © 2026 SMD STREAMS. ALL RIGHTS RESERVED.
+    </p>
+
   </footer>
+
 
   <script src="script.js"></script>
 
