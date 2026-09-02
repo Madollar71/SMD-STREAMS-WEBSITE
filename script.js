@@ -1,8 +1,13 @@
-function watchLive() {
-  alert("🔴 SMD STREAMS — Live stream coming soon!");
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-// Simple welcome message
-window.onload = function () {
-  console.log("SMD STREAMS website loaded successfully!");
-};
+  console.log("SMD STREAMS website loaded.");
+
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      console.log("Navigation:", link.textContent);
+    });
+  });
+
+});
