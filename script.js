@@ -1,191 +1,256 @@
-document.addEventListener("DOMContentLoaded", function () {
+// =====================================================
+// SMD STREAMS — SCRIPT
+// Twitch Player + Live Status + Loading Screen
+// =====================================================
 
-  console.log("SMD STREAMS loaded.");
+document.addEventListener("DOMContentLoaded", () => {
 
-  const statusTitle = document.getElementById("status-title");
-  const statusText = document.getElementById("status-text");
-  const statusLight = document.getElementById("status-light");
+    // -------------------------------------------------
+    // LOADING SCREEN
+    // -------------------------------------------------
 
-  const miniStatus = document.getElementById("mini-status");
-  const miniLight = document.getElementById("mini-status-light");
+    const loadingScreen = document.getElementById("loading-screen");
 
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            if (loadingScreen) {
+                loadingScreen.classList.add("hidden");
 
-  function setLiveStatus() {
-
-    statusTitle.textContent = "🔴 LIVE NOW";
-    statusText.textContent = "SMD STREAMS is live on Twitch";
-
-    statusLight.style.background = "#ff1744";
-    statusLight.style.boxShadow = "0 0 12px #ff1744";
-
-    miniStatus.textContent = "LIVE";
-    miniLight.style.background = "#ff1744";
-    miniLight.style.boxShadow = "0 0 10px #ff1744";
-
-  }
-
-
-  function setOfflineStatus() {
-
-    statusTitle.textContent = "⚫ OFFLINE";
-    statusText.textContent = "Check back for the next stream";
-
-    statusLight.style.background = "#666";
-    statusLight.style.boxShadow = "none";
-
-    miniStatus.textContent = "OFFLINE";
-    miniLight.style.background = "#666";
-    miniLight.style.boxShadow = "none";
-
-  }
-
-
-  function setCheckingStatus() {
-
-    statusTitle.textContent = "CHECKING STATUS...";
-    statusText.textContent = "Connecting to Twitch";
-
-  }
-
-
-  /*
-    Twitch Embed
-  */
-
-  if (typeof Twitch !== "undefined") {
-
-    const player = new Twitch.Embed(
-      "twitch-player",
-      {
-        width: "100%",
-        height: 500,
-        channel: "still_madollare",
-        layout: "video",
-        autoplay: false,
-        parent: ["madollar71.github.io"]
-      }
-    );
-
-
-    player.addEventListener(
-      Twitch.Embed.VIDEO_READY,
-      function () {
-
-        console.log("Twitch player ready.");
-
-      }
-    );
-
-
-    player.addEventListener(
-      Twitch.Embed.ONLINE,
-      function () {
-
-        console.log("SMD STREAMS is LIVE.");
-
-        setLiveStatus();
-
-      }
-    );
-
-
-    player.addEventListener(
-      Twitch.Embed.OFFLINE,
-      function () {
-
-        console.log("SMD STREAMS is OFFLINE.");
-
-        setOfflineStatus();
-
-      }
-    );
-
-  } else {
-
-    setCheckingStatus();
-
-    console.log("Twitch Embed API failed to load.");
-
-  }
-
-
-  /*
-    Navigation
-  */
-
-  const navLinks = document.querySelectorAll("nav a");
-
-  navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-      console.log(
-        "Navigation:",
-        link.textContent.trim()
-      );
-
+                setTimeout(() => {
+                    loadingScreen.style.display = "none";
+                }, 600);
+            }
+        }, 800);
     });
 
-  });
+
+    // -------------------------------------------------
+    // TWITCH SETTINGS
+    // -------------------------------------------------
+
+    const twitchUsername = "still_madollare";
+
+    const twitchPlayer = document.getElementById("twitch-player");
+
+    const statusLight = document.getElementById("status-light");
+    const statusTitle = document.getElementById("status-title");
+    const statusText = document.getElementById("status-text");
+
+    const miniStatusLight = document.getElementById("mini-status-light");
+    const miniStatus = document.getElementById("mini-status");
 
 
-  /*
-    Button interaction
-  */
+    // -------------------------------------------------
+    // TWITCH PLAYER
+    // -------------------------------------------------
 
-  const buttons = document.querySelectorAll(
-    ".main-button, .secondary-button, .profile-button, .twitch-profile-button, .social-card"
-  );
+    if (twitchPlayer && typeof Twitch !== "undefined") {
 
-  buttons.forEach(function (button) {
+        const hostname = window.location.hostname;
 
-    button.addEventListener("click", function () {
-
-      button.style.transform = "scale(0.97)";
-
-      setTimeout(function () {
-
-        button.style.transform = "";
-
-      }, 120);
-
-    });
-
-  });
+        const parentDomain =
+            hostname === "localhost" ||
+            hostname === "127.0.0.1"
+                ? "localhost"
+                : hostname;
 
 
-  /*
-    Section reveal
-  */
+        new Twitch.Embed("twitch-player", {
 
-  const sections = document.querySelectorAll("section");
+            width: "100%",
+            height: 500,
 
-  const observer = new IntersectionObserver(
-    function (entries) {
+            channel: twitchUsername,
 
-      entries.forEach(function (entry) {
+            layout: "video",
 
-        if (entry.isIntersecting) {
+            autoplay: false,
 
-          entry.target.classList.add("visible");
+            muted: true,
+
+            parent: [parentDomain]
+
+        });
+
+    }
+
+
+    // -------------------------------------------------
+    // STATUS CHECK
+    // -------------------------------------------------
+
+    async function checkTwitchStatus() {
+
+        try {
+
+            /*
+             * Twitch does not allow a normal website to
+             * directly check live status without Twitch API
+             * authentication.
+             *
+             * Therefore we use the Twitch channel page as
+             * the safest fallback.
+             */
+
+            if (statusTitle) {
+                statusTitle.textContent = "SMD STREAMS";
+            }
+
+            if (statusText) {
+                statusText.textContent = "Visit Twitch to see live status";
+            }
+
+            if (statusLight) {
+                statusLight.classList.remove("online");
+                statusLight.classList.add("offline");
+            }
+
+            if (miniStatus) {
+                miniStatus.textContent = "CHECK TWITCH";
+            }
+
+            if (miniStatusLight) {
+                miniStatusLight.classList.remove("online");
+                miniStatusLight.classList.add("offline");
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Twitch status error:",
+                error
+            );
 
         }
 
-      });
-
-    },
-    {
-      threshold: 0.08
     }
-  );
 
 
-  sections.forEach(function (section) {
+    // Run status check
+    checkTwitchStatus();
 
-    section.classList.add("reveal");
 
-    observer.observe(section);
+    // Check again every 60 seconds
+    setInterval(
+        checkTwitchStatus,
+        60000
+    );
 
-  });
+
+    // -------------------------------------------------
+    // SMOOTH SCROLLING
+    // -------------------------------------------------
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(anchor => {
+
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+    // -------------------------------------------------
+    // HEADER SCROLL EFFECT
+    // -------------------------------------------------
+
+    const header =
+        document.querySelector("header");
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (!header) return;
+
+            if (window.scrollY > 50) {
+
+                header.classList.add(
+                    "scrolled"
+                );
+
+            } else {
+
+                header.classList.remove(
+                    "scrolled"
+                );
+
+            }
+
+        }
+    );
+
+
+    // -------------------------------------------------
+    // GAMING CARD ANIMATION
+    // -------------------------------------------------
+
+    const cards =
+        document.querySelectorAll(
+            ".gaming-card, .social-card"
+        );
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+
+
+    // -------------------------------------------------
+    // CONSOLE MESSAGE
+    // -------------------------------------------------
+
+    console.log(
+        "%c SMD STREAMS ",
+        "font-size:20px;font-weight:bold;"
+    );
+
+    console.log(
+        "Gaming • Streaming • Entertainment"
+    );
 
 });
